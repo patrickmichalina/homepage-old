@@ -1,0 +1,15 @@
+<h1 class="mt-0">Projects</h1>
+<p>This page lists both personal projects and corporate sponsored projects I had a significant role in architecting and/or implementing.
+  Most internal tools written for previous employers will not have external links becuase they are only accesible from internal
+  networks.
+</p>
+<section *ngFor="let project of ps.projects$ | async">
+  <header>
+    <h3>{{ project?.name }}</h3>
+    <a *ngIf="project?.sourceLink" [href]="project?.sourceLink?.href" target="_blank">Source Code <i class="fa fa-code" aria-hidden="true"></i></a>
+    <span *ngIf="project?.sourceLink && project?.demoLink"> | </span>
+    <a *ngIf="project?.demoLink" [href]="project?.demoLink?.href" target="_blank">Demo <i class="fa fa-external-link" aria-hidden="true"></i></a>
+  </header>
+  <p>{{ project.description }}</p>
+  <!-- <p *ngIf="project.tech"><em>Technologies: {{ project.tech }}</em></p> -->
+</section>

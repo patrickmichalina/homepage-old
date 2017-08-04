@@ -1,0 +1,65 @@
+<h1 class="mt-0 mb-0">Resume</h1>
+<aside>
+  <div class="grey-text">
+    <i class="fa fa-print" aria-hidden="true"></i>
+    <span>Print</span>
+  </div>
+  <div class="grey-text">
+    <i class="fa fa-phone" aria-hidden="true"></i>
+    <span>Available on request</span>
+  </div>
+  <div class="grey-text">
+    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+    <span>Austin, TX</span>
+  </div>
+  <div class="grey-text">
+    <i class="fa fa-github" aria-hidden="true"></i>
+    <a href="https://github.com/patrickmichalina">Github</a>
+  </div>
+  <div class="grey-text">
+    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    <span><a href="mailto:patrickmichalina@mac.com">patrickmichalina@mac.com</a></span>
+  </div>
+</aside>
+<p>Software engineer with expertise in modern web development with a focus on interactive, Single Page Applications.</p>
+<div *ngIf="resume$ | async as resume">
+  <section>
+    <h2>Skills</h2>
+    <div class="pad">
+      <div *ngFor="let key of resume.skills | objectKeys ">
+        <h3 class="inline">{{ key }}:</h3>
+        <span *ngFor="let skill of resume.skills[key]; let last = last">
+        <a [href]="skill.href" target="_blank">{{ skill.name }}</a><span *ngIf="!last">, </span>
+        </span>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Professional Experience</h2>
+    <div class="row" *ngFor="let exp of resume.experience">
+      <img [src]="exp.image.src" [alt]="exp.image.alt">
+      <header>
+        <h3>{{ exp?.title }}</h3>
+        <h4><a [href]="exp?.employer?.href" target="_blank">{{ exp?.employer?.title }}</a> </h4>
+        <h4>
+          <span>{{ exp?.start }}</span><span> to </span>
+          <span>{{ exp?.stop }}</span>
+        </h4>
+      </header>
+      <div [innerHTML]="exp?.summary"></div>
+      <!-- <p *ngFor="let sum of exp?.summary">{{ sum }}</p> -->
+    </div>
+  </section>
+  <section>
+    <h2>Education</h2>
+    <div class="row" *ngFor="let edu of resume.education">
+      <img [src]="edu.image.src" [alt]="edu.image.alt">
+      <header>
+        <h3><a [href]="edu?.program?.href" target="_blank">{{ edu?.program?.title }}</a></h3>
+        <h4><a [href]="edu?.school?.href" target="_blank">{{ edu?.school?.title }}</a></h4>
+        <h4>{{ edu.date }}</h4>
+      </header>
+      <p>{{ edu?.summary }}</p>
+    </div>
+  </section>
+</div>

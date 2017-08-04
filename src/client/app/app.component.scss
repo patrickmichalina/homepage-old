@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex: 1;
+  @media (max-width: 700px) {
+    display: block;
+  }
+  .container {
+    overflow: auto;
+    padding: 1em;
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../../styles/variables";
+:host {
+  display: flex;
+  flex: 0 0 256px;
+  flex-direction: column;
+  background-color: $primary-color;
+  nav {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 700px) {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 2em;
+    }
+  }
+  .avatar {
+    align-self: center;
+    border-radius: 50%;
+    margin-top: 1em;
+    width: 100px;
+    height: 100px;
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+  a {
+    color: $white;
+    -o-transition: .25s;
+    -ms-transition: .25s;
+    -moz-transition: .25s;
+    -webkit-transition: .25s;
+    transition: .25s;
+    &:hover {
+      color: $orange;
+      text-decoration: none;
+    }
+  }
+  .active {
+    color: $orange;
+  }
+  ul {
+    justify-content: space-around;
+    display: inline-flex;
+    padding: 2em;
+  }
+  .fa {
+    font-size: 1.35em;
+  }
+}

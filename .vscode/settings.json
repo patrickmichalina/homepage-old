@@ -1,0 +1,9 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "git.confirmSync": false,
+    "editor.tabSize": 2,
+    "autoimport.filesToScan": "src/**/*.{ts,tsx}",
+    "git.enableSmartCommit": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "beautify.tabSize": 2
+}

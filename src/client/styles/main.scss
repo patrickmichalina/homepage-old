@@ -1,0 +1,57 @@
+$fa-font-path: '/assets/fonts/font-awesome';
+@import '../../../node_modules/font-awesome/scss/font-awesome';
+@import "variables";
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    color: red;
+    text-decoration: underline;
+  }
+}
+
+.grey-text {
+  color: $grey;
+}
+.orange-text {
+  color: $orange;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+p {
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}

@@ -1,0 +1,9 @@
+<img class="avatar" [src]="navbarService.pic" alt="profile image"> 
+<nav>
+   <a *ngFor="let item of navbarService.menu$ | async" [routerLink]="item.route" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ item.name }}</a>
+</nav>
+<ul>
+  <li *ngFor="let item of navbarService.social$ | async">
+    <a [href]="item.href"><i [class]="item.icon"></i></a>
+  </li>
+</ul>
