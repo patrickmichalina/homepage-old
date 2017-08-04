@@ -6,7 +6,7 @@ const ProdConfig: EnvConfig = {
   env: 'prod',
   endpoints: {
     api: 'http://localhost:1338/api',
-    cdn: 'https://cdn.cool.com'
+    cdn: 'https://patrickmichalina-8724.kxcdn.com'
   },
   server: {
     host: "https://patrickmichalina.com",
